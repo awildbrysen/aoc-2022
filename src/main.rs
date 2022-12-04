@@ -4,10 +4,12 @@ use std::fs;
 mod day_1_calorie_counting;
 mod day_2_rock_paper_scissors;
 mod day_3_rucksack_reorganization;
+mod day_4_camp_cleanup;
 
 use day_1_calorie_counting::{get_highest_calories, get_n_highest_calories};
 use day_2_rock_paper_scissors::{calculate_score, calculate_score_by_guide};
 use day_3_rucksack_reorganization::{priorities, group_priorities};
+use day_4_camp_cleanup::{subset_assignments, overlapping_assignments};
 
 fn main() -> Result<(), Box<dyn Error>> {
     let day_1_input = &fs::read_to_string("input/day_1.txt")?;
@@ -21,6 +23,10 @@ fn main() -> Result<(), Box<dyn Error>> {
     let day_3_input = &fs::read_to_string("input/day_3.txt")?;
     println!("Day 3 part 1: {:?}", priorities(day_3_input));
     println!("Day 3 part 2: {:?}", group_priorities(day_3_input));
+
+    let day_4_input = &fs::read_to_string("input/day_4.txt")?;
+    println!("Day 4 part 1: {:?}", subset_assignments(day_4_input));
+    println!("Day 4 part 2: {:?}", overlapping_assignments(day_4_input));
 
     Ok(())
 }
